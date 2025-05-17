@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="landing">
+    <h1>Create Your Professional Resume</h1>
+    <p>Build a job-winning resume with live preview and PDF export.</p>
+    <button onclick="startBuilder()">Start Building</button>
+  </section>
+
+  <section id="builder" style="display:none;">
+    <div class="form-section">
+      <h2>Enter Your Details</h2>
+      <input type="text" placeholder="Full Name" id="name" />
+      <input type="text" placeholder="Title (e.g. Software Engineer)" id="title" />
+      <input type="file" id="imageUpload" accept="image/*" />
+      <input type="text" placeholder="Phone" id="phone" />
+      <input type="email" placeholder="Email" id="email" />
+      <input type="text" placeholder="Address" id="address" />
+      <input type="text" placeholder="Guardian Name" id="guardian" />
+      <input type="text" placeholder="GitHub Link" id="github" />
+      <textarea placeholder="Profile Summary" id="profile"></textarea>
+
+      <div id="educationContainer">
+        <h3>Education</h3>
+        <button onclick="addEducation()">+ Add Education</button>
+      </div>
+
+      <div id="projectContainer">
+        <h3>Projects (Optional)</h3>
+        <button onclick="addProject()">+ Add Project</button>
+      </div>
+
+      <div id="companyContainer">
+        <h3>Companies (Optional)</h3>
+        <button onclick="addCompany()">+ Add Company</button>
+      </div>
+
+      <h3>Skills</h3>
+      <textarea id="skills" placeholder="Comma-separated (e.g., Python, C++)"></textarea>
+
+      <h3>Languages</h3>
+      <textarea id="languages" placeholder="Comma-separated (e.g., English, Hindi)"></textarea>
+
+      <h3>Hobbies</h3>
+      <textarea id="hobbies" placeholder="Comma-separated (e.g., Music, Reading)"></textarea>
+
+      <button onclick="generateResume()">Generate Resume</button>
+      <button onclick="window.print()">Download PDF</button>
+    </div>
+
+    <div id="preview" class="resume-preview">
+      <!-- Resume preview will be inserted here -->
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
